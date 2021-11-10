@@ -1,27 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+  --font-size: 16px;
+}
+
+html {
+  font-family: 'Red Hat Display', sans-serif;
 }
 
 body {
   background-image: url('/images/pattern-background-desktop.svg');
+  background-size: 100%;
   background-repeat: no-repeat;
-  background-size: cover;
-  font-size: 16px;
-  font-family: 'Red Hat Display', sans-serif;
-  color: hsl(223, 47%, 23%);
+  background-color: var(--pale-blue);
+  font-size: var(--font-size);
+  color: var(--dark-blue);
 }
 
 .container {
+  height: 100vh;
   display: flex;
   justify-content: center;
+  margin: 0 auto;
+  align-items: center;
 }
 
 .card {
   border-radius: 15px;
-  width: 400px;
+  max-width: 450px;
   overflow: hidden;
-  background-color: #fff;
+  background-color: white;
 }
 
 .card img {
@@ -46,11 +65,11 @@ body {
   font-size: 1rem;
   text-align: center;
   font-weight: normal;
-  color: hsl(224, 23%, 55%);
+  color: var(--desaturated-blue);
 }
 
 .card .card-pricing {
-  background-color: hsl(225, 100%, 98%);
+  background-color: var(--very-pale-blue);
   display: flex;
   flex-direction: row;
   margin: 2rem;
@@ -78,7 +97,7 @@ body {
 .card .card-pricing .plan .price {
   font-size: 0.8rem;
   margin-top: 0.2rem;
-  color: hsl(224, 23%, 55%);
+  color: var(--bright-blue);
 }
 
 .card .card-pricing a {
@@ -102,22 +121,45 @@ body {
 
 .card .card-actions button {
   margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.card .card-actions button:active {
+  transform: scale(0.99);
 }
 
 .card .card-actions .proceed {
-  background-color: hsl(245, 75%, 52%);
+  background-color: var(--bright-blue);
   height: 2.5rem;
-  color: #fff;
+  color: white;
   font-weight: 700;
   border: 0;
   border-radius: 10px;
-  cursor: pointer;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card .card-actions .proceed:active {
+  background-color: rgba(118, 108, 241);
 }
 
 .card .card-actions .cancel {
   background-color: transparent;
   border: 0;
-  color: hsl(224, 23%, 55%);
+  color: var(--desaturated-blue);
+  margin-top: 1rem;
   font-weight: 700;
-  text-decoration: none;
+}
+
+.card .card-actions .cancel:hover {
+  color: var(--dark-blue);
+}
+
+@media only screen and (max-width: 375px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+    margin: 10px;
+  }
 }
