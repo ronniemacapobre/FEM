@@ -64,6 +64,7 @@ body {
 .container .card p {
   padding: 0 20px;
   margin-bottom: 50px;
+  line-height: 1.5;
   color: var(--trans-white-main);
 }
 
@@ -80,6 +81,7 @@ body {
   font-weight: 700;
   font-size: 16px;
   color: white;
+  margin-bottom: 3px;
 }
 
 @media (min-width: 768px) {
