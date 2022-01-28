@@ -64,6 +64,23 @@ body {
   font-weight: 300;
 }
 
+header {
+  z-index: 2;
+}
+
+.overlay {
+  position: fixed;
+  top: 4.375rem;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-image: linear-gradient(var(--dark-blue), transparent);
+}
+
+.close {
+  display: none;
+}
+
 header nav {
   height: 70px;
   background: var(--white);
@@ -117,14 +134,14 @@ header nav .menu {
   display: flex;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 720px) {
   header nav .menu,
   header nav button {
     display: none;
   }
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 720px) {
   header nav .hamburger {
     display: none;
   }
